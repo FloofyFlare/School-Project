@@ -27,4 +27,19 @@ struct Person
         }
     }
 };
- 
+
+int main() { 
+    printf("Enter your hobbies, skills, work, and intrests");
+    cout << endl << "hobbies:";
+    getline(cin,passions);
+    cout << endl << "skills:";
+    getline(cin,skills);
+    cout << endl << "intrest:";
+    getline(cin,intrests);
+    cout << endl << "work:";
+    getline(cin,effort);
+    
+    
+    
+    
+}
