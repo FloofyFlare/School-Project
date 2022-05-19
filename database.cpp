@@ -8,7 +8,6 @@ struct Person
 {
     string passions, skills, intrests;
     int effort;
-    
     struct Person *next;
 
     Person(string passion, string skill,string intrest, int work){
@@ -27,11 +26,15 @@ struct Person
             }
 
         }
+        return team;
     }
 };
+
 struct Person* head;
 
 void DatabaseEnter(int i) {
+    string passions, skills, intrests;
+    int effort;
     printf("Enter your hobbies, skills, work, and intrests");
     cout << endl << "hobbies:";
     getline(cin,passions);
@@ -42,7 +45,7 @@ void DatabaseEnter(int i) {
     cout << endl << "work:";
     getline(cin,effort);   
     
-    temp = new Person*(passions, skills, intrests, effort);
+    Person* temp = new Person*(passions, skills, intrests, effort);
     
     if (i == 0)
     head = temp;
@@ -61,7 +64,7 @@ void DatabaseEnter(int i) {
 int main() { 
     bool keep = true;
     int i = 0;
-   While (keep){
+    while(keep){
     DatabaseEnter(i);
        i++;
     }
