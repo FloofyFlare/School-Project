@@ -21,7 +21,7 @@ struct Person
 };
 
 struct Person* head;
-        void DatabaseEnter(int i) {
+void DatabaseEnter(int i) {
         string passions, skills, intrests;
         int effort;
         cout << "Enter your hobbies, skills, work, and intrests" << endl;
