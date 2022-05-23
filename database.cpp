@@ -10,6 +10,7 @@ struct Person
 {
     string passions, skills, intrests;
     int effort;
+    
     struct Person* next;
 
     Person(string passion, string skill, string intrest, int work) {
@@ -21,6 +22,7 @@ struct Person
 };
 
 struct Person* head;
+
 void DatabaseEnter(int i) {
         string passions, skills, intrests;
         int effort;
@@ -68,6 +70,38 @@ bool Confirmation(string comment){
         }
 }
 
+class Matchmaking() {
+    private: 
+        int playerNum = 1;
+        Person* temp = head;
+        vector<int> players;
+    
+        string passion, skill, intrest;
+        int effort;
+    
+    public:
+    Matchmaking(string passions, string skills, string intrests, int work) {
+        passion = passions;
+        skill = skills;
+        intrest = intrests;
+        effort = work;
+    }
+    
+    vector<int> methodNum() {
+        vector<int> x;
+        while(temp == NULL){
+           int match;
+           if(temp->passion.compare(passion) == 0 || temp->skill.compare(skill) == 0 || temp->intrest.compare(intrest) == 0|| temp->effort == this.effort ){
+               x.push_back(playerNum);
+           }
+            playerNum++;
+            temp->next = temp;
+            
+        }
+        return x;
+    }
+}
+
 int main() {
     bool runningProgram = true;
     while (runningProgram) {
@@ -76,8 +110,23 @@ int main() {
         }
         else{
             cout << "describe attributes for matchmaking" << endl;
+            cout << "Matchmaking..." << endl;
+            string passions, skills, intrests;
+            int effort;
+            cout << "Enter your hobbies, skills, work, and intrests" << endl;
+            cout << endl << "hobbies:";
+            getline(cin, passions);
+            cout << endl << "skills:";
+            getline(cin, skills);
+            cout << endl << "intrest:";
+            getline(cin, intrests);
+            cout << endl << "work:";
+            cin >> effort;
 
-            cout << "Matchmaking...";
+            Matchmaking match = new Matchmaking(passions, skills, intrests, effort);
+            
+            cout << endl << match.methodNum();
+            
         }
     }
     return 0;
